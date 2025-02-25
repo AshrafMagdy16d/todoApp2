@@ -1,6 +1,12 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, FlatList, TextInput } from 'react-native';
-import Router from './Router';
+
+import Router from './src/Routing';
+import { Provider } from 'react-redux';
+import store from './src/Redux/store';
+
+
+
+
 
 
 export default function App() {
@@ -20,8 +26,11 @@ export default function App() {
   ]);
 
   return (
+ 
+<Provider store={store}>
+  <Router/>
+</Provider>
 
- <Router/>
   );
 }
 
